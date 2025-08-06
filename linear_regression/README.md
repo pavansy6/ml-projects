@@ -9,9 +9,7 @@ This project applies **Linear Regression, Ridge Regression, and Lasso Regression
 ### 🔹 Log-Transforming the Target
 House prices are highly skewed. To reduce heteroscedasticity, we use a log-transform:
 
-\[
-y = \log(\text{price})
-\]
+![equation](https://latex.codecogs.com/svg.latex?y%20=%20\log(\text{price}))
 
 ---
 
@@ -19,16 +17,14 @@ y = \log(\text{price})
 We created new features to capture non-linear effects:
 
 - **sqft_living × grade** → larger high-quality homes are disproportionately expensive.  
-- **bath\_bed\_ratio = bathrooms / bedrooms** → reflects home livability.  
+- **bath_bed_ratio = bathrooms / bedrooms** → reflects home livability.  
 
 ---
 
 ### 🔹 Standardization
 For Ridge & Lasso, we standardize features:
 
-\[
-z = \frac{x - \mu}{\sigma}
-\]
+![equation](https://latex.codecogs.com/svg.latex?z%20=%20\frac{x%20-%20\mu}{\sigma})
 
 ---
 
@@ -37,24 +33,18 @@ z = \frac{x - \mu}{\sigma}
 ### 1. Linear Regression
 We model house price as:
 
-\[
-\hat{y} = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \dots + \beta_n x_n
-\]
+![equation](https://latex.codecogs.com/svg.latex?\hat{y}=\beta_0+\beta_1x_1+\beta_2x_2+\dots+\beta_nx_n)
 
 Coefficients are estimated by minimizing the **Residual Sum of Squares (RSS):**
 
-\[
-RSS = \sum_{i=1}^m (y_i - \hat{y}_i)^2
-\]
+![equation](https://latex.codecogs.com/svg.latex?RSS=\sum_{i=1}^m(y_i-\hat{y}_i)^2)
 
 ---
 
 ### 2. Ridge Regression (L2 Regularization)
 Adds a squared penalty term to shrink coefficients:
 
-\[
-\text{Loss} = RSS + \alpha \sum_{j=1}^n \beta_j^2
-\]
+![equation](https://latex.codecogs.com/svg.latex?\text{Loss}=RSS+\alpha\sum_{j=1}^n\beta_j^2)
 
 ✅ Handles multicollinearity.  
 🚫 Never sets coefficients to 0.  
@@ -64,9 +54,7 @@ Adds a squared penalty term to shrink coefficients:
 ### 3. Lasso Regression (L1 Regularization)
 Adds an absolute penalty:
 
-\[
-\text{Loss} = RSS + \alpha \sum_{j=1}^n |\beta_j|
-\]
+![equation](https://latex.codecogs.com/svg.latex?\text{Loss}=RSS+\alpha\sum_{j=1}^n|\beta_j|)
 
 ✅ Performs **feature selection** by setting some coefficients exactly to 0.  
 
@@ -77,21 +65,18 @@ Adds an absolute penalty:
 Since the model works in log-space, we evaluate in two ways:
 
 ### 🔹 Coefficient of Determination (R²)
-\[
-R^2 = 1 - \frac{\sum (y_i - \hat{y}_i)^2}{\sum (y_i - \bar{y})^2}
-\]
+
+![equation](https://latex.codecogs.com/svg.latex?R^2=1-\frac{\sum(y_i-\hat{y}_i)^2}{\sum(y_i-\bar{y})^2})
 
 - Measures variance explained in log(price).  
-- \( R^2 \approx 0.77 \) → model explains ~77% of variance.  
+- ![equation](https://latex.codecogs.com/svg.latex?R^2\approx0.77) → model explains ~77% of variance.  
 
 ---
 
 ### 🔹 Root Mean Squared Error (RMSE)
 Evaluated in **original dollar prices**:
 
-\[
-RMSE = \sqrt{\frac{1}{m} \sum ( \exp(y_i) - \exp(\hat{y}_i) )^2 }
-\]
+![equation](https://latex.codecogs.com/svg.latex?RMSE=\sqrt{\frac{1}{m}\sum(\exp(y_i)-\exp(\hat{y}_i))^2})
 
 - RMSE ≈ **\$221,000** → predictions are off by ~$221K on average.  
 
