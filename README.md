@@ -26,7 +26,7 @@ ml-projects/
 
 ### 1. Clone this repo
 ```bash
-git clone https://github.com/<your-username>/ml-projects.git
+git clone https://github.com/pavansy6/ml-projects.git
 cd ml-projects
 ```
 
@@ -78,4 +78,4 @@ This repository is designed to:
 
 ---
 
-👨‍💻 Created by [Pavan Yadav](https://github.com/<your-username>)
+👨‍💻 Created by [Pavan Yadav](https://github.com/pavansy6)
