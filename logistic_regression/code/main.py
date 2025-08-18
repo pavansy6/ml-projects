@@ -6,7 +6,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 
 # Load the dataset
-file_path = '/home/pavan/Documents/PSY/customer_churn/data/dataset.mat'
+file_path = '../data/dataset.mat'
 
 # If the file path is relative, adjust it accordingly
 with open(file_path, 'r') as f:
